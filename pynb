@@ -1,0 +1,246 @@
+!pip install gradio gTTS
+
+import gradio as gr
+from gtts import gTTS
+import os
+
+# Simulated diagnoses
+diagnosis_dict = {
+    "Diabetes": "Your blood sugar levels are high. This indicates diabetes. We recommend lifestyle changes and monitoring.",
+    "Pneumonia": "Your chest X-ray indicates signs of pneumonia. Please follow up with a chest specialist.",
+    "Skin Cancer": "Lesion patterns suggest potential skin cancer. We suggest a biopsy for confirmation.",
+    "Eye Disease": "Retinal scan shows signs of diabetic retinopathy. Regular eye checkups are crucial."
+}
+
+# Function to generate voice + text explanation
+def explain_diagnosis(disease, language):
+    explanation = diagnosis_dict.get(disease, "Please select a valid disease.")
+    
+    # Generate speech
+    tts = gTTS(text=explanation, lang='hi' if language == 'Hindi' else 'en')
+    audio_path = "diagnosis.mp3"
+    tts.save(audio_path)
+
+    # Return explanation, audio, and embed video
+    video_html = f"""
+    <video width="400" controls autoplay loop>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+    """
+    return explanation, audio_path, video_html
+
+# Gradio Interface
+iface = gr.Interface(
+    fn=explain_diagnosis,
+    inputs=[
+        gr.Dropdown(choices=list(diagnosis_dict.keys()), label="Choose Disease"),
+        gr.Radio(["English", "Hindi"], value="English", label="Language")
+    ],
+    outputs=[
+        gr.Textbox(label="Doctor's Explanation"),
+        gr.Audio(label="Voice Output"),
+        gr.HTML(label="Virtual Doctor Avatar")
+    ],
+    title="🧠 Virtual Doctor Avatar - AI Smart Clinic",
+    description="Select a disease to see how the virtual doctor explains it!"
+)
+
+iface.launch()
+!pip install gradio gTTS
+
+import gradio as gr
+from gtts import gTTS
+import os
+
+# Simulated diagnoses
+diagnosis_dict = {
+    "Diabetes": "Your blood sugar levels are high. This indicates diabetes. We recommend lifestyle changes and monitoring.",
+    "Pneumonia": "Your chest X-ray indicates signs of pneumonia. Please follow up with a chest specialist.",
+    "Skin Cancer": "Lesion patterns suggest potential skin cancer. We suggest a biopsy for confirmation.",
+    "Eye Disease": "Retinal scan shows signs of diabetic retinopathy. Regular eye checkups are crucial."
+}
+
+# Function to generate voice + text explanation
+def explain_diagnosis(disease, language):
+    explanation = diagnosis_dict.get(disease, "Please select a valid disease.")
+    
+    # Generate speech
+    tts = gTTS(text=explanation, lang='hi' if language == 'Hindi' else 'en')
+    audio_path = "diagnosis.mp3"
+    tts.save(audio_path)
+
+    # Return explanation, audio, and embed video
+    video_html = f"""
+    <video width="400" controls autoplay loop>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+    """
+    return explanation, audio_path, video_html
+
+# Gradio Interface
+iface = gr.Interface(
+    fn=explain_diagnosis,
+    inputs=[
+        gr.Dropdown(choices=list(diagnosis_dict.keys()), label="Choose Disease"),
+        gr.Radio(["English", "Hindi"], value="English", label="Language")
+    ],
+    outputs=[
+        gr.Textbox(label="Doctor's Explanation"),
+        gr.Audio(label="Voice Output"),
+        gr.HTML(label="Virtual Doctor Avatar")
+    ],
+    title="🧠 Virtual Doctor Avatar - AI Smart Clinic",
+    description="Select a disease to see how the virtual doctor explains it!"
+)
+
+iface.launch()
+!pip install gradio gTTS
+
+import gradio as gr
+from gtts import gTTS
+import os
+
+# Simulated diagnoses
+diagnosis_dict = {
+    "Diabetes": "Your blood sugar levels are high. This indicates diabetes. We recommend lifestyle changes and monitoring.",
+    "Pneumonia": "Your chest X-ray indicates signs of pneumonia. Please follow up with a chest specialist.",
+    "Skin Cancer": "Lesion patterns suggest potential skin cancer. We suggest a biopsy for confirmation.",
+    "Eye Disease": "Retinal scan shows signs of diabetic retinopathy. Regular eye checkups are crucial."
+}
+
+# Function to generate voice + text explanation
+def explain_diagnosis(disease, language):
+    explanation = diagnosis_dict.get(disease, "Please select a valid disease.")
+    
+    # Generate speech
+    tts = gTTS(text=explanation, lang='hi' if language == 'Hindi' else 'en')
+    audio_path = "diagnosis.mp3"
+    tts.save(audio_path)
+
+    # Return explanation, audio, and embed video
+    video_html = f"""
+    <video width="400" controls autoplay loop>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+    """
+    return explanation, audio_path, video_html
+
+# Gradio Interface
+iface = gr.Interface(
+    fn=explain_diagnosis,
+    inputs=[
+        gr.Dropdown(choices=list(diagnosis_dict.keys()), label="Choose Disease"),
+        gr.Radio(["English", "Hindi"], value="English", label="Language")
+    ],
+    outputs=[
+        gr.Textbox(label="Doctor's Explanation"),
+        gr.Audio(label="Voice Output"),
+        gr.HTML(label="Virtual Doctor Avatar")
+    ],
+    title="🧠 Virtual Doctor Avatar - AI Smart Clinic",
+    description="Select a disease to see how the virtual doctor explains it!"
+)
+
+iface.launch()
+# Install necessary libraries
+!pip install gradio gTTS
+
+import gradio as gr
+from gtts import gTTS
+import os
+
+# ✅ Define diagnosis explanations
+diagnosis_dict = {
+    "Diabetes": "Your blood sugar levels are high. This indicates diabetes. We recommend lifestyle changes and monitoring.",
+    "Pneumonia": "Your chest X-ray indicates signs of pneumonia. Please follow up with a chest specialist.",
+    "Skin Cancer": "Lesion patterns suggest potential skin cancer. We suggest a biopsy for confirmation.",
+    "Eye Disease": "Retinal scan shows signs of diabetic retinopathy. Regular eye checkups are crucial."
+}
+
+# ✅ Main function
+def explain_diagnosis(disease, language):
+    explanation = diagnosis_dict.get(disease, "Please select a valid disease.")
+    
+    # Generate audio with gTTS
+    tts = gTTS(text=explanation, lang='hi' if language == 'Hindi' else 'en')
+    audio_path = "diagnosis.mp3"
+    tts.save(audio_path)
+    
+    # ✅ Doctor avatar video (medical themed)
+    video_html = f"""
+    <video width="400" controls autoplay loop>
+      <source src="https://videos.pexels.com/video-files/3182826/3182826-hd_1920_1080_25fps.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+    """
+    return explanation, audio_path, video_html
+
+# ✅ Gradio Interface
+iface = gr.Interface(
+    fn=explain_diagnosis,
+    inputs=[
+        gr.Dropdown(choices=list(diagnosis_dict.keys()), label="Select Disease"),
+        gr.Radio(["English", "Hindi"], value="English", label="Language")
+    ],
+    outputs=[
+        gr.Textbox(label="Doctor's Explanation"),
+        gr.Audio(label="Voice Output"),
+        gr.HTML(label="Virtual Doctor Avatar")
+    ],
+    title="👩‍⚕️ Virtual Doctor Avatar - AI Smart Clinic",
+    description="Select a disease and hear a virtual doctor explain your diagnosis."
+)
+
+iface.launch()
+!pip install gradio gTTS
+
+import gradio as gr
+from gtts import gTTS
+import os
+
+# Simulated diagnoses
+diagnosis_dict = {
+    "Diabetes": "Your blood sugar levels are high. This indicates diabetes. We recommend lifestyle changes and monitoring.",
+    "Pneumonia": "Your chest X-ray indicates signs of pneumonia. Please follow up with a chest specialist.",
+    "Skin Cancer": "Lesion patterns suggest potential skin cancer. We suggest a biopsy for confirmation.",
+    "Eye Disease": "Retinal scan shows signs of diabetic retinopathy. Regular eye checkups are crucial."
+}
+
+# Function to generate voice + text explanation
+def explain_diagnosis(disease, language):
+    explanation = diagnosis_dict.get(disease, "Please select a valid disease.")
+    
+    # Generate speech
+    tts = gTTS(text=explanation, lang='hi' if language == 'Hindi' else 'en')
+    audio_path = "diagnosis.mp3"
+    tts.save(audio_path)
+
+    # Return explanation, audio, and embed video
+    video_html = f"""
+    <video width="400" controls autoplay loop>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+    """
+    return explanation, audio_path, video_html
+
+# Gradio Interface
+iface = gr.Interface(
+    fn=explain_diagnosis,
+    inputs=[
+        gr.Dropdown(choices=list(diagnosis_dict.keys()), label="Choose Disease"),
+        gr.Radio(["English", "Hindi"], value="English", label="Language")
+    ],
+    outputs=[
+        gr.Textbox(label="Doctor's Explanation"),
+        gr.Audio(label="Voice Output"),
+        gr.HTML(label="Virtual Doctor Avatar")
+    ],
+    title="🧠 Virtual Doctor Avatar - AI Smart Clinic",
+    description="Select a disease to see how the virtual doctor explains it!"
+)
+
+iface.launch()
